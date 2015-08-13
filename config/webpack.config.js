@@ -9,7 +9,7 @@ var config =  {
 	entry:[
 		'font-awesome-webpack!./config/font-awesome.config.js',
 		'bootstrap-webpack!./config/bootstrap.config.js',
-		'./src/main.coffee',
+		'./src/assets/scripts/main.coffee',
 	],
 	output:{
 		path:build_path,
