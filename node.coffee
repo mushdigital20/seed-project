@@ -1,3 +1,9 @@
+###*
+ * @author Pedro Mello (MushDigital)
+ * @email: pedro@mushdigital.com
+ * @Date:   2015-08-14
+###
+
 express 			= require 'express'
 webpack_middleware 	= require 'webpack-dev-middleware'
 webpack 			= require 'webpack'
@@ -10,7 +16,8 @@ engine  			= require 'ejs-locals'
 
 app = express()
 assets_path = path.resolve(__dirname, 'src')
-port = 8080
+port = process.env.PORT || 8080;
+host = process.env.YOUR_HOST || '0.0.0.0';
 
 #Settings
 app.engine 'ejs', engine
@@ -31,5 +38,5 @@ app.use(webpack_middleware(compiler, {
 
 }))
 
-app.listen port,'localhost',()->
+app.listen port,host,()->
 	console.log "Server started on #{port}"
